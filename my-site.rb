@@ -9,6 +9,7 @@ class MySite < Sinatra::Base
     erb :index
   end
 
+
   get "/add_task" do
     erb :add_task
   end
@@ -17,7 +18,7 @@ class MySite < Sinatra::Base
     @task_name = params[:task_name]
     @description = params[:description]
 
-    task = TaskList::TaskMaster.new.add_task(@task_name, @description)
+    task = TaskList::TaskMaster.new('taskList.db').add_task(@task_name, @description)
     erb :add_task
   end
 
