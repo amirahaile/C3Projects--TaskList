@@ -5,7 +5,6 @@ module TaskList
   class TaskMaster < Database
 
     def all_tasks
-
       # santitize/validate your arguments
 
       # prepare your statement
@@ -17,7 +16,6 @@ module TaskList
     end
 
     def add_task(name, description)
-
       # santitize/validate your arguments
 
       # prepare your statement
