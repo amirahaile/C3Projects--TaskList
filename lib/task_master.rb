@@ -4,21 +4,28 @@ module TaskList
 
   class TaskMaster < Database
 
-    def add_task(*args)
+    def all_tasks
 
       # santitize/validate your arguments
 
       # prepare your statement
-      statement = "INSERT INTO taskList (task_name, description) VALUES (#{args[0]}, #{args[1]});"
+      statement = "SELECT * FROM taskList;"
 
       # call `query!` to interact with the database
-      # new_task = TaskList::Database.new('taskList')
-      # new_task.query!(statement)
       query!(statement)
       # determine what should be returned
     end
 
+    def add_task(name, description)
 
+      # santitize/validate your arguments
+
+      # prepare your statement
+      statement = "INSERT INTO taskList (task_name, description) VALUES ('#{name}', '#{description}');"
+      # call `query!` to interact with the database
+      query!(statement)
+      # determine what should be returned
+    end
 
   end #class
 end #module

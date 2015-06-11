@@ -6,6 +6,8 @@ class MySite < Sinatra::Base
   register Sinatra::Reloader
 
   get "/" do
+    q = TaskList::TaskMaster.new("taskList.db")
+    @tasks = q.all_tasks
     erb :index
   end
 
@@ -18,8 +20,10 @@ class MySite < Sinatra::Base
     @task_name = params[:task_name]
     @description = params[:description]
 
-    task = TaskList::TaskMaster.new('taskList.db').add_task(@task_name, @description)
-    erb :add_task
+    q = TaskList::TaskMaster.new('taskList.db')
+    q.add_task(@task_name, @description)
+    @tasks = q.all_tasks
+    erb :index
   end
 
 end
