@@ -19,7 +19,6 @@ class MySite < Sinatra::Base
     erb :index
   end
 
-
   get "/add_task" do
     erb :add_task
   end
@@ -30,6 +29,22 @@ class MySite < Sinatra::Base
 
     q = TaskList::TaskMaster.new('taskList.db')
     q.add_task(@task_name, @description)
+    redirect to "/"
+  end
+
+  get "/delete/:task_id" do
+    task_id = params[:task_id].to_i
+    q = TaskList::TaskMaster.new('taskList.db')
+    tasks = q.all_tasks
+    @task = tasks.find { |task| task[0] == task_id }
+    erb :delete
+  end
+
+  post "/delete/:task_id" do
+    task_id = params[:task_id].to_i
+    delete_task = params[:delete?]
+    q = TaskList::TaskMaster.new('taskList.db')
+    q.delete_task(task_id) if delete_task == "yes"
     redirect to "/"
   end
 

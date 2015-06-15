@@ -33,5 +33,10 @@ module TaskList
       end
     end
 
+    def delete_task(task_id)
+      statement = "DELETE FROM taskList WHERE id = '#{task_id}';"
+      query!(statement)
+    end
+
   end #class
 end #module

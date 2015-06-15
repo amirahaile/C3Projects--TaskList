@@ -1,0 +1,23 @@
+<header>
+  <h1>Delete Task</h1>
+</header>
+
+<a href="/">&laquo; Home</a>
+
+<section>
+  <form action="" method="post">
+    <legend>
+      <h3>Are you sure you want to delete "<%= @task[1] %>"? This is for-ev-er.</h3>
+    </legend>
+
+    <label><input type="radio" name="delete?" value="yes">Yes</label>
+    <label><input type="radio" name="delete?" value="no">No</label>
+
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+</section>
+
+<pre>
+  <%= params %>
+</pre>
