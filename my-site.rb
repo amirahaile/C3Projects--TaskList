@@ -22,8 +22,7 @@ class MySite < Sinatra::Base
 
     q = TaskList::TaskMaster.new('taskList.db')
     q.add_task(@task_name, @description)
-    @tasks = q.all_tasks
-    erb :index
+    redirect to "/"
   end
 
 end
