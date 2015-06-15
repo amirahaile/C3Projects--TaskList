@@ -28,8 +28,8 @@ class MySite < Sinatra::Base
     @description = params[:description]
 
     q = TaskList::TaskMaster.new('taskList.db')
-    q.add_task(@task_name, @description)
-    redirect to "/"
+    @message = q.add_task(@task_name, @description)
+    @message == "" ? (redirect to "/") : (erb :add_task)
   end
 
   get "/delete/:task_id" do

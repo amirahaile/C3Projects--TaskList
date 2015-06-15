@@ -4,6 +4,10 @@
 
 <a href="/">&laquo; Home</a>
 
+<% if @message != "" %>
+  <h3> <%= @message %> </h3>
+<% end %>
+
 <section>
   <form action="" method="post" accept-charset="utf-8">
     <label for="task_name">Task Name</label>
@@ -20,3 +24,6 @@
   </form>
 </section>
 
+<pre>
+<%= params %>
+</pre>

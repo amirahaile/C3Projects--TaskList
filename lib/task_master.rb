@@ -17,12 +17,13 @@ module TaskList
 
     def add_task(name, description)
       # santitize/validate your arguments
-
-      # prepare your statement
-      statement = "INSERT INTO taskList (task_name, description) VALUES ('#{name}', '#{description}');"
-      # call `query!` to interact with the database
-      query!(statement)
-      # determine what should be returned
+      unless name == ""
+        statement = "INSERT INTO taskList (task_name, description) VALUES ('#{name}', '#{description}');"
+        query!(statement)
+        return ""
+      else
+        return "Please enter task name."
+      end
     end
 
     def update_tasks(completed_tasks)
