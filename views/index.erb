@@ -1,7 +1,9 @@
-<h1>Task List</h1>
+<header>
+  <h1>Task List</h1>
+</header>
 
 <section>
-  <ul>
+  <ul id="tasks">
     <!-- task in @tasks is an array -->
     <% @tasks.each do |task| %>
     <li>
@@ -13,5 +15,3 @@
     <% end %>
   </ul>
 </section>
-
- <a href="/add_task">Add New Task</a>

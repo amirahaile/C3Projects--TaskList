@@ -1,13 +1,33 @@
 html, body {
   margin: 0;
   padding: 0;
+  background-color: #B6CDD6;
+  background-image: url(/images/back_pattern.png);
+  background-repeat: repeat;
 }
 
 h1 {
-  text-align: center;
+  color: #7696A3;
+  text-transform: uppercase;
+  font-size: 53px;
+  font-weight: 600;
+  margin: 0;
+}
+
+h3 {
+  font-family: 'Andale Mono', monospace;
+  font-size: 33px;
+  margin: 0 0 12px 0;
+}
+
+p {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 22px;
+  margin: 0;
 }
 
 a {
+  text-decoration: none;
   color: #fff;
 }
 
@@ -15,15 +35,49 @@ body {
   margin: 0 auto;
 }
 
+nav {
+  position: relative;
+  right: -910px;
+  width: 110px;
+  margin-right: 20px;
+  padding: 10px;
+  background-color: #7696A3;
+  color: #fff;
+}
+
 main {
   margin: 0 auto;
-  width: 660px;
-  background: #329594;
+  width: 960px;
+  background: #AEC7D1;
   padding: 15px;
-  margin-top: 20px;
+  margin-top: 115px;
+  border-radius: 5px;
+}
+
+header {
+  position: absolute;
+  top: 72px;
+  left: 50px;
 }
 
 section {
   margin: 0 auto;
-  width: 500px;
+  width: 610px;
+}
+
+#tasks ul {
+  list-style-position: inside;
+}
+#tasks li {
+  border-top: 2px solid #99B1BA;
+  padding: 25px 20px;
+}
+#tasks li:hover {
+  border-color: #7696A3;
+}
+#tasks li:last-child {
+  border-bottom: 2px solid #99B1BA;
+}
+#tasks li:last-child:hover {
+  border-color: #7696A3;
 }
