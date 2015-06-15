@@ -65,21 +65,19 @@ section {
   width: 610px;
 }
 
-#tasks ul {
-  list-style-position: inside;
-}
-#tasks li {
+
+#tasks div {
   border-top: 2px solid #99B1BA;
-  padding: 25px 20px;
+  padding: 25px 0px;
 }
-#tasks li:hover {
+
+#tasks div:hover {
   border-color: #7696A3;
 }
-#tasks li:last-child {
-  border-bottom: 2px solid #99B1BA;
-}
-#tasks li:last-child:hover {
-  border-color: #7696A3;
+
+#tasks h3 {
+  display: inline;
+  padding: 10px;
 }
 
 #completed {

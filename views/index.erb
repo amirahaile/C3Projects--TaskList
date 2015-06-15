@@ -4,23 +4,33 @@
 
 <section>
   <form action="" method="post" id="tasks">
-    <input type="submit" value="Update">
+    <input type="submit" value="Update Task List">
     <!-- task in @tasks is an array -->
-    <fieldset>
+
+    <fieldset id="tasks">
     <% @tasks.each do |task| %>
+    <div>
        <label><input type="checkbox" name="completed[]" value=<%= task[0] %>>
+
         <% if task[3] != nil %>
-          <h3 id = <%= 'completed' %>><%= task[1] %> </h3></label>
+          <h3 id = <%= 'completed' %>><%= task[1] %>
         <% else %>
-          <h3> <%= task[1] %></h3></label>
+          <h3> <%= task[1] %>
         <% end %>
+      </h3></label>
+
        <p>
          <%= task[2] %>
+        <% if task[3] != nil %>
+         (<%= task[3] %>)
+        <% end %>
        </p>
        <p>
          <a href="/delete/<%= task[0] %>">Delete</a>
        </p>
     <% end %>
+    </div>
     </fieldset>
+
   </form>
 </section>

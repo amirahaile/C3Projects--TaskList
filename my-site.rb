@@ -14,7 +14,9 @@ class MySite < Sinatra::Base
   post "/" do
     @completed_tasks = params[:completed]
     q = TaskList::TaskMaster.new("taskList.db")
-    q.update_tasks(@completed_tasks)
+
+    q.update_tasks(@completed_tasks) if @completed_tasks != nil
+
     @tasks = q.all_tasks
     erb :index
   end
