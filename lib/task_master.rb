@@ -25,5 +25,13 @@ module TaskList
       # determine what should be returned
     end
 
+    def update_tasks(completed_tasks)
+      completed_tasks.map do |id|
+        statement = "UPDATE taskList SET completed_date = '#{Time.new.strftime("%m/%d/%Y")}' WHERE id = '#{id}';"
+          puts statement
+        query!(statement)
+      end
+    end
+
   end #class
 end #module

@@ -11,6 +11,14 @@ class MySite < Sinatra::Base
     erb :index
   end
 
+  post "/" do
+    @completed_tasks = params[:completed]
+    q = TaskList::TaskMaster.new("taskList.db")
+    q.update_tasks(@completed_tasks)
+    @tasks = q.all_tasks
+    erb :index
+  end
+
 
   get "/add_task" do
     erb :add_task

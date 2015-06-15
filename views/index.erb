@@ -3,15 +3,23 @@
 </header>
 
 <section>
-  <ul id="tasks">
+  <form action="" method="post" id="tasks">
+    <input type="submit" value="Update">
     <!-- task in @tasks is an array -->
+    <fieldset>
     <% @tasks.each do |task| %>
-    <li>
-       <h3> <%= task[1] %> </h3>
+       <label><input type="checkbox" name="completed[]" value=<%= task[0] %>>
+        <% if task[3] != nil %>
+          <h3 id = <%= 'completed' %>><%= task[1] %> </h3></label>
+        <% else %>
+          <h3> <%= task[1] %></h3></label>
+        <% end %>
        <p>
          <%= task[2] %>
        </p>
-    </li>
     <% end %>
-  </ul>
+    </fieldset>
+  </form>
 </section>
+
+

@@ -81,3 +81,7 @@ section {
 #tasks li:last-child:hover {
   border-color: #7696A3;
 }
+
+#completed {
+  text-decoration: line-through;
+}
